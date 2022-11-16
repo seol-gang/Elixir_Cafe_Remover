@@ -7,6 +7,7 @@ defmodule NaverCafeRemover.MixProject do
       version: "0.1.0",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
+      releases: releases(),
       deps: deps()
     ]
   end
@@ -16,6 +17,14 @@ defmodule NaverCafeRemover.MixProject do
     [
       extra_applications: [:logger],
       mod: {NaverCafeRemover.ArticleRemover, []}
+    ]
+  end
+
+  def releases() do
+    [
+      naver_cafe_remover: [
+        applications: [ex_unit: :permanent]
+      ]
     ]
   end
 
