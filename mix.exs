@@ -24,14 +24,16 @@ defmodule NaverCafeRemover.MixProject do
     [
       naver_cafe_remover: [
         applications: [ex_unit: :permanent]
-      ]
+      ],
+      include_executables_for: [:unix]
     ]
   end
 
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:wallaby, "~> 0.30.0"}
+      {:wallaby, "~> 0.30.0"},
+      {:poison, "~> 5.0"}
     ]
   end
 end
